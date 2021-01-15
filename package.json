@@ -14,7 +14,8 @@
     "test-coverage": "jest --coverage --watchAll",
     "patch": "npm version patch",
     "major": "npm version major",
-    "minor": "npm version minor"
+    "minor": "npm version minor",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color"
   },
   "author": "Echo Core",
   "license": "MIT",
@@ -22,10 +23,25 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
     "@rollup/plugin-typescript": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.2",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "react": "^16.13.1",
     "rollup": "^2.34.1",
+    "prettier": "^2.0.5",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
