@@ -1,0 +1,22 @@
+.icon {
+    position: relative;
+    transform-origin: left top;
+    width: 46px;
+    height: 46px;
+
+    border: 3px solid #fff;
+    border-radius: 10rem;
+    padding: 8px;
+}
+
+.shadow {
+    position: absolute;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 46px;
+    height: 46px;
+    border-radius: 10rem;
+}
+
+* {
+    box-sizing: border-box;
+}

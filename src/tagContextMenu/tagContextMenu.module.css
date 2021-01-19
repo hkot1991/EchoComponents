@@ -1,0 +1,59 @@
+.contextWrapper {
+    cursor: pointer;
+    position: absolute;
+}
+
+.contextWrapperExpanded {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    width: 395px;
+}
+
+.container {
+    z-index: 80;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.tagActive {
+    margin: 4px;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 46px;
+    border: 1px solid var(--asBuilt);
+    overflow: hidden;
+}
+
+.tagIconCentered {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.heading {
+    padding: 0px var(--small) 0px var(--small);
+    text-align: start;
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tagText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    color: var(--equiGreen1);
+    font-weight: bold;
+}
+
+.tagInfoIcon {
+    margin: 3px;
+}

@@ -1,6 +1,5 @@
-
-function HelloEcho (): void {
- console.log("Hello Form Echo Template!");
+function HelloEcho(): void {
+    console.log('Hello Form Echo Template!');
 }
 
-HelloEcho()
+HelloEcho();
