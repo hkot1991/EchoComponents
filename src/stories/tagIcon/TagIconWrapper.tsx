@@ -1,7 +1,7 @@
 import React from 'react';
 import { getIcon } from '../../tagContextMenu/helpers';
-import TagIcon from '../../tagContextMenu/TagIcon';
-import TagIconShadowWrapper from '../../tagContextMenu/TagIconShadow';
+import TagIcon from '../../tagIcon/TagIcon';
+import TagIconShadowWrapper from '../../tagIcon/TagIconShadow';
 
 export interface TagIconWrapperProps {
     icon: string;

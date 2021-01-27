@@ -12,7 +12,22 @@ import { ReactComponent as Signal } from '../icons/tags/Signal-icon.svg';
 import { ReactComponent as Tag } from '../icons/tags/Tag-icon.svg';
 import { ReactComponent as Telecom } from '../icons/tags/Telecom-icon.svg';
 
-export function getIcon(iconType: string): JSX.Element {
+export function getIcon(
+    iconType:
+        | 'Electrical'
+        | 'Main Equipment'
+        | 'Line'
+        | 'Manual Valve'
+        | 'Circuit/Starter'
+        | 'Instrument'
+        | 'Cable'
+        | 'Function'
+        | 'Signal'
+        | 'Telecom'
+        | 'Junction Box'
+        | 'Administrative'
+        | string
+): JSX.Element {
     switch (iconType) {
         case 'Electrical':
             return <ElectricalIcon />;

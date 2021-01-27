@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getIcon } from '../../tagContextMenu/helpers';
-import TagContextMenu, { Position } from '../../tagContextMenu/TagContextMenu';
-import TagIcon from '../../tagContextMenu/TagIcon';
+import TagContextMenu from '../../tagContextMenu/TagContextMenu';
+import TagIcon from '../../tagIcon/TagIcon';
 
 export interface TagContextMenuWrapperProps {
     icon: string;
     legendColor: string;
     tagNo: string;
     description: string;
-    position: Position;
 }
 
 const TagContextMenuWrapper: React.FC<TagContextMenuWrapperProps> = ({
     icon,
     legendColor,
     tagNo,
-    description,
-    position
+    description
 }: TagContextMenuWrapperProps) => {
+    const [expanded, setExpanded] = useState(false);
+
+    const openTagInformation = (): void => {
+        setExpanded(!expanded);
+    };
+
     return (
-        <TagContextMenu tagNo={tagNo} description={description} position={position}>
+        <TagContextMenu
+            setExpanded={setExpanded}
+            openTagInformation={openTagInformation}
+            tagNo={tagNo}
+            description={description}
+            expanded={expanded}
+        >
             <TagIcon icon={getIcon(icon)} legendColor={legendColor}></TagIcon>
         </TagContextMenu>
     );

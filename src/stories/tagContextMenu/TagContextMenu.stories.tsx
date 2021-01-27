@@ -27,8 +27,7 @@ export default {
                     'Other'
                 ]
             }
-        },
-        position: { control: { type: 'object' } }
+        }
     }
 } as Meta;
 
@@ -38,5 +37,7 @@ export const Default = Template.bind({});
 
 Default.args = {
     icon: 'Electrical',
-    legendColor: 'blue'
+    legendColor: '#007079',
+    tagNo: 'D-11PSSV0803',
+    description: 'CEMENT UNIT'
 };
