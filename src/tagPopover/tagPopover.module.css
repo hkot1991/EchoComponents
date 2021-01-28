@@ -1,7 +1,6 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
     right: 0px;
     position: absolute;
 }
@@ -38,6 +37,12 @@
     align-self: flex-end;
 }
 
+@media screen and (max-width: 440px) {
+    .optionsPopover {
+        max-width: 270px;
+    }
+}
+
 .groupWrapper {
     display: flex;
     flex-direction: column;
@@ -45,6 +50,9 @@
 }
 
 @media screen and (max-width: 440px) {
+    .wrapper {
+        left: 0px;
+    }
     .arrow {
         align-self: flex-start;
         margin-left: 15px;

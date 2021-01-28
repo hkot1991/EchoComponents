@@ -1,19 +1,23 @@
 import { themeConst } from '@equinor/echo-framework';
-import { Button } from '@equinor/eds-core-react';
+import { Button, CircularProgress } from '@equinor/eds-core-react';
 import React, { useState } from 'react';
 import { Icon } from '../icon/Icon';
-import TagPopover, { TagInfoData } from '../tagPopover/TagPopover';
+import TagPopover from '../tagPopover/TagPopover';
+import { TagInfoData } from '../types/tagInfoData';
 import style from './tagMoreInfo.module.css';
 
 export interface TagMoreInfoProps {
     fetchDataToShow: () => void;
-    isLoading: boolean;
     fetchedData: TagInfoData[];
+    isLoading: boolean;
 }
 
-export const TagMoreInfo: React.FC<TagMoreInfoProps> = ({ fetchDataToShow, fetchedData }: TagMoreInfoProps) => {
+export const TagMoreInfo: React.FC<TagMoreInfoProps> = ({
+    fetchDataToShow,
+    fetchedData,
+    isLoading
+}: TagMoreInfoProps) => {
     const [expanded, setExpanded] = useState<boolean>(false);
-    const moreInfoRef = React.createRef<HTMLButtonElement>();
 
     const renderPopoverButton = (): JSX.Element => {
         if (!expanded) {
@@ -27,12 +31,20 @@ export const TagMoreInfo: React.FC<TagMoreInfoProps> = ({ fetchDataToShow, fetch
         fetchDataToShow();
         setExpanded(!expanded);
     };
+
     return (
         <div className={style.wrapper}>
-            <Button className={style.button} variant="ghost_icon" ref={moreInfoRef} onClick={onShowMoreClicked}>
-                {renderPopoverButton()}
-            </Button>
-            {expanded && <TagPopover dataToShow={fetchedData} parentRef={moreInfoRef} />}
+            {expanded && isLoading ? (
+                <div className={style.button}>
+                    <CircularProgress className={style.spinner} />
+                </div>
+            ) : (
+                <Button className={style.button} variant="ghost_icon" onClick={onShowMoreClicked}>
+                    {renderPopoverButton()}
+                </Button>
+            )}
+
+            {expanded && <TagPopover isLoading={isLoading} dataToShow={fetchedData} />}
         </div>
     );
 };

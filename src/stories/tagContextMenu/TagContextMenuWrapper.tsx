@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getIcon } from '../../tagContextMenu/helpers';
+import { getIcon } from '../../helpers/getIcon';
 import TagContextMenu from '../../tagContextMenu/TagContextMenu';
 import TagIcon from '../../tagIcon/TagIcon';
 

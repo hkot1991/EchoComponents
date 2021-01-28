@@ -1,6 +1,6 @@
-import React from 'react';
-import { getIcon } from '../tagContextMenu/helpers';
-import TagContextMenu, { Position } from '../tagContextMenu/TagContextMenu';
+import React, { CSSProperties } from 'react';
+import { getIcon } from '../helpers/getIcon';
+import TagContextMenu from '../tagContextMenu/TagContextMenu';
 import TagIcon from '../tagIcon/TagIcon';
 import style from './tagContextOverlay.module.css';
 
@@ -11,7 +11,7 @@ interface TagContextOverlayProps {
     setExpanded: (expanded: boolean) => void;
     tagNo: string;
     description: string;
-    position: Position;
+    positionStyle: CSSProperties;
     openTagInformation: () => void;
     children?: React.ReactNode;
 }
@@ -23,12 +23,12 @@ const TagContextOverlay: React.FC<TagContextOverlayProps> = ({
     setExpanded,
     tagNo,
     description,
-    position,
+    positionStyle,
     openTagInformation,
     children
 }: TagContextOverlayProps) => {
     return (
-        <div style={position} className={style.wrapper}>
+        <div style={positionStyle} className={style.wrapper}>
             <TagContextMenu
                 setExpanded={setExpanded}
                 openTagInformation={openTagInformation}

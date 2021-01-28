@@ -1,6 +1,7 @@
 .wrapper {
     position: absolute;
     max-width: 400px;
+    min-width: 200px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -12,6 +13,7 @@
 @media screen and (max-width: 440px) {
     .wrapper {
         max-width: 250px;
+        min-width: 250px;
     }
 
     .wrapper > div:first-child {
@@ -22,5 +24,6 @@
 @media screen and (min-width: 440px) and (max-width: 560px) {
     .wrapper {
         max-width: 350px;
+        min-width: 200px;
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getIcon } from '../../tagContextMenu/helpers';
+import { getIcon } from '../../helpers/getIcon';
 import TagIcon from '../../tagIcon/TagIcon';
 import TagIconShadowWrapper from '../../tagIcon/TagIconShadow';
 

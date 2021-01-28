@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Position } from '../../tagContextMenu/TagContextMenu';
+import React, { CSSProperties, useState } from 'react';
 import TagMoreInfo from '../../tagContextMenu/TagMoreInfo';
 import TagContextOverlay from '../../tagContextOverlay/TagContextOverlay';
-import { TagInfoData } from '../../tagPopover/TagPopover';
+import { TagInfoData } from '../../types/tagInfoData';
 
 export interface TagContextOverlayWrapperProps {
     dataToShow: TagInfoData[];
@@ -10,7 +9,7 @@ export interface TagContextOverlayWrapperProps {
     legendColor: string;
     tagNo: string;
     description: string;
-    position: Position;
+    position: CSSProperties;
 }
 
 const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
@@ -23,13 +22,20 @@ const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
 }: TagContextOverlayWrapperProps) => {
     const [fetchedDataToShow, setFetchedDataToShow] = useState<TagInfoData[]>([]);
     const [expanded, setExpanded] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const openTagInformation = (): void => {
         setExpanded(!expanded);
     };
 
     const fetchDataToShow = (): void => {
-        setFetchedDataToShow(dataToShow);
+        setIsLoading(true);
+        setFetchedDataToShow([]);
+
+        setTimeout(function () {
+            setFetchedDataToShow(dataToShow);
+            setIsLoading(false);
+        }, 3000);
     };
 
     return (
@@ -40,10 +46,10 @@ const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
             setExpanded={setExpanded}
             tagNo={tagNo}
             description={description}
-            position={position}
+            positionStyle={position}
             openTagInformation={openTagInformation}
         >
-            <TagMoreInfo fetchDataToShow={fetchDataToShow} isLoading={false} fetchedData={fetchedDataToShow} />
+            <TagMoreInfo fetchDataToShow={fetchDataToShow} isLoading={isLoading} fetchedData={fetchedDataToShow} />
         </TagContextOverlay>
     );
 };

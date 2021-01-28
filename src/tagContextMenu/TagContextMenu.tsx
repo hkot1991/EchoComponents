@@ -14,11 +14,6 @@ interface TagContextMenuProps {
     children: React.ReactNode;
 }
 
-export interface Position {
-    left: string;
-    top: string;
-}
-
 export const TagContextMenu: React.FC<TagContextMenuProps> = ({
     expanded,
     setExpanded,
