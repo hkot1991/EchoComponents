@@ -1,7 +1,7 @@
 import React, { CSSProperties, useState } from 'react';
-import TagMoreInfo from '../../buttonWithPopover/ButtonWithPopover';
-import ContextMenu from '../../contextMenu/ContextMenu';
-import { DataInformation } from '../../types/dataInformation';
+import TagMoreInfo from '../../../src/buttonWithPopover/ButtonWithPopover';
+import ContextMenu from '../../../src/contextMenu/ContextMenu';
+import { DataInformation } from '../../../src/types/dataInformation';
 
 export interface ContextMenuWrapperProps {
     dataToShow: DataInformation[];

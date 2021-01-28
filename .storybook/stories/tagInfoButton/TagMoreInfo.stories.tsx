@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
-import DataInfoButton, { DataInfoButtonProps } from '../../contextMenuPopover/DataInfoButton';
+import DataInfoButton, { DataInfoButtonProps } from '../../../src/contextMenuPopover/DataInfoButton';
 
 export default {
     title: 'TagInfoButton',

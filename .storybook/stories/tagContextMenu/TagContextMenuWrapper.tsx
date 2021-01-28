@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { getIcon } from '../../helpers/getIcon';
-import TagContextMenu from '../../tagContextMenu/TagContextMenu';
-import TagIcon from '../../tagIcon/TagIcon';
+import { getIcon } from '../../../src/helpers/getIcon';
+import TagContextMenu from '../../../src/tagContextMenu/TagContextMenu';
+import TagIcon from '../../../src/tagIcon/TagIcon';
 
 export interface TagContextMenuWrapperProps {
     icon: string;
