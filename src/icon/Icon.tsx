@@ -7,8 +7,17 @@ export interface IconProps {
     title: string;
     color: string;
 }
-
-export const Icon: React.FC<IconProps> = ({ name, title, color }: IconProps) => {
+/**
+ * Component that work's as a eds icon wrapper, it imports all eds possible icons
+ *
+ * @param {IconProps} {
+ *  name: The name of the icon to be displayed
+ *  title: The html title to use
+ *  color:The color to icon should have
+ * }
+ * @return {*} {JSX.Element} A icon for the provided information
+ */
+export const Icon: React.FC<IconProps> = ({ name, title, color }: IconProps): JSX.Element => {
     EdsIcon.add(icons);
 
     return <EdsIcon name={name} title={title} color={color} />;

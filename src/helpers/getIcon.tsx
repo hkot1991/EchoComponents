@@ -11,7 +11,25 @@ import { ReactComponent as ManualValve } from '../icons/tags/ManualValve-icon.sv
 import { ReactComponent as Signal } from '../icons/tags/Signal-icon.svg';
 import { ReactComponent as Tag } from '../icons/tags/Tag-icon.svg';
 import { ReactComponent as Telecom } from '../icons/tags/Telecom-icon.svg';
-
+/**
+ * Method that returns the relevant Icon for the iconType provided
+ * Tag icon is the default JSX.Element Icon returned
+ * @export
+ * @param {('Electrical'
+ *         | 'Main Equipment'
+ *         | 'Line'
+ *         | 'Manual Valve'
+ *         | 'Circuit/Starter'
+ *         | 'Instrument'
+ *         | 'Cable'
+ *         | 'Function'
+ *         | 'Signal'
+ *         | 'Telecom'
+ *         | 'Junction Box'
+ *         | 'Administrative'
+ *         | string)} iconType The type of icon you want returned
+ * @return {*}  {JSX.Element} Relevant icon for the provided iconType
+ */
 export function getIcon(
     iconType:
         | 'Electrical'

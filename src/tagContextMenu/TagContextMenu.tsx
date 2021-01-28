@@ -13,7 +13,21 @@ interface TagContextMenuProps {
     openTagInformation: () => void;
     children: React.ReactNode;
 }
-
+/**
+ * Component that renders a tag context menu that can be expanded and closed upon click
+ * The condensed variant will only display the the relevant tag icon
+ * The expanded variant will display relevant tag icon, tag number and tag description
+ *
+ * @param {TagContextMenuProps} {
+ *     expanded: flag that state if the context menu should be expanded or not
+ *     setExpanded: method to update the expanded flag
+ *     tagNo: the tag no to display
+ *     description: the tag description
+ *     openTagInformation: method called when expanded context menu is called
+ *     children: Meant to be used to pass TagIcon component to this component
+ * }
+ * @return {*}  {JSX.Element} a tag context menu for the provided properties
+ */
 export const TagContextMenu: React.FC<TagContextMenuProps> = ({
     expanded,
     setExpanded,
@@ -21,7 +35,7 @@ export const TagContextMenu: React.FC<TagContextMenuProps> = ({
     description,
     openTagInformation,
     children
-}: TagContextMenuProps) => {
+}: TagContextMenuProps): JSX.Element => {
     if (expanded) {
         return (
             <div className={styles.contextWrapperExpanded} onClick={openTagInformation}>

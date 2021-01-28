@@ -11,12 +11,22 @@ export interface ButtonWithPopoverProps {
     fetchedData: DataInformation[];
     isLoading: boolean;
 }
-
+/**
+ * Component that renders a round button, that opens a popover upon being clicked
+ *
+ * @param {ButtonWithPopoverProps} {
+ *     fetchDataToShow: Data fetch method called upon button clicked
+ *     fetchedData: array of DataInformation that popover should be displayed when button is clicked.
+ *                  Meant to be the return value of the fetchDataToShow method
+ *     isLoading: flag to show loading state if data fetch takes some time
+ * }
+ * @return {*}  {JSX.Element} Round button with belonging popover to display data information buttons
+ */
 export const ButtonWithPopover: React.FC<ButtonWithPopoverProps> = ({
     fetchDataToShow,
     fetchedData,
     isLoading
-}: ButtonWithPopoverProps) => {
+}: ButtonWithPopoverProps): JSX.Element => {
     const [expanded, setExpanded] = useState<boolean>(false);
 
     const renderPopoverButton = (): JSX.Element => {

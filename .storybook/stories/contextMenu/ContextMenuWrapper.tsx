@@ -19,7 +19,7 @@ const ContextMenuWrapper: React.FC<ContextMenuWrapperProps> = ({
     tagNo,
     description,
     position
-}: ContextMenuWrapperProps) => {
+}: ContextMenuWrapperProps): JSX.Element => {
     const [fetchedDataToShow, setFetchedDataToShow] = useState<DataInformation[]>([]);
     const [expanded, setExpanded] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);

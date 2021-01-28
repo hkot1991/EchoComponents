@@ -8,8 +8,20 @@ export interface DataInfoPopoverProps {
     dataToShow: DataInformation[];
     isLoading: boolean;
 }
-
-export const DataInfoPopover: React.FC<DataInfoPopoverProps> = ({ dataToShow, isLoading }: DataInfoPopoverProps) => {
+/**
+ * Component that renders a popover with data information buttons
+ *
+ * @param {DataInfoPopoverProps} {
+ *  dataToShow: list of DataInformation objects to be displayed.
+ *  The itemType in these objects are used to group them together in the popover
+ *  isLoading: loading flag that tells if a dot progress should be displayed if data is being fetched
+ * }
+ * @return {*} {JSX.Element} Popover with data information buttons based on the provided DataInformation objects
+ */
+const DataInfoPopover: React.FC<DataInfoPopoverProps> = ({
+    dataToShow,
+    isLoading
+}: DataInfoPopoverProps): JSX.Element => {
     const getDataGroupings = dataToShow.reduce((dictionary: { [itemType: string]: DataInformation[] }, current) => {
         if (!dictionary[current.itemType]) {
             dictionary[current.itemType] = [current];
