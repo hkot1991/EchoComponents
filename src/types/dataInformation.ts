@@ -1,4 +1,4 @@
-export interface TagInfoData {
+export interface DataInformation {
     numberOfItems: number;
     label: string;
     ariaLabel?: string;

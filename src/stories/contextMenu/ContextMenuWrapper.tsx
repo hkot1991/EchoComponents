@@ -1,10 +1,10 @@
 import React, { CSSProperties, useState } from 'react';
-import TagMoreInfo from '../../tagContextMenu/TagMoreInfo';
-import TagContextOverlay from '../../tagContextOverlay/TagContextOverlay';
-import { TagInfoData } from '../../types/tagInfoData';
+import TagMoreInfo from '../../buttonWithPopover/ButtonWithPopover';
+import ContextMenu from '../../contextMenu/ContextMenu';
+import { DataInformation } from '../../types/dataInformation';
 
-export interface TagContextOverlayWrapperProps {
-    dataToShow: TagInfoData[];
+export interface ContextMenuWrapperProps {
+    dataToShow: DataInformation[];
     icon: string;
     legendColor: string;
     tagNo: string;
@@ -12,15 +12,15 @@ export interface TagContextOverlayWrapperProps {
     position: CSSProperties;
 }
 
-const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
+const ContextMenuWrapper: React.FC<ContextMenuWrapperProps> = ({
     dataToShow,
     icon,
     legendColor,
     tagNo,
     description,
     position
-}: TagContextOverlayWrapperProps) => {
-    const [fetchedDataToShow, setFetchedDataToShow] = useState<TagInfoData[]>([]);
+}: ContextMenuWrapperProps) => {
+    const [fetchedDataToShow, setFetchedDataToShow] = useState<DataInformation[]>([]);
     const [expanded, setExpanded] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -39,7 +39,7 @@ const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
     };
 
     return (
-        <TagContextOverlay
+        <ContextMenu
             icon={icon}
             legendColor={legendColor}
             expanded={expanded}
@@ -50,8 +50,8 @@ const TagContextOverlayWrapper: React.FC<TagContextOverlayWrapperProps> = ({
             openTagInformation={openTagInformation}
         >
             <TagMoreInfo fetchDataToShow={fetchDataToShow} isLoading={isLoading} fetchedData={fetchedDataToShow} />
-        </TagContextOverlay>
+        </ContextMenu>
     );
 };
 
-export default TagContextOverlayWrapper;
+export default ContextMenuWrapper;

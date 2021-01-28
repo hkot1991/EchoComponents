@@ -1,13 +1,13 @@
 import { Button } from '@equinor/eds-core-react';
 import React from 'react';
-import { TagInfoData } from '../types/tagInfoData';
-import style from './tagInfoButton.module.css';
+import { DataInformation } from '../types/dataInformation';
+import style from './dataInfoButton.module.css';
 
-export interface TagInfoButtonProps {
-    data: TagInfoData;
+export interface DataInfoButtonProps {
+    data: DataInformation;
 }
 
-const TagInfoButton: React.FC<TagInfoButtonProps> = ({ data }: TagInfoButtonProps) => {
+export const DataInfoButton: React.FC<DataInfoButtonProps> = ({ data }: DataInfoButtonProps) => {
     return (
         <Button
             aria-label={data.ariaLabel ?? data.label}
@@ -23,4 +23,4 @@ const TagInfoButton: React.FC<TagInfoButtonProps> = ({ data }: TagInfoButtonProp
     );
 };
 
-export default TagInfoButton;
+export default DataInfoButton;

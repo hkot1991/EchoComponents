@@ -1,15 +1,15 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
-import TagInfoButton, { TagInfoButtonProps } from '../../tagPopover/TagInfoButton';
+import DataInfoButton, { DataInfoButtonProps } from '../../contextMenuPopover/DataInfoButton';
 
 export default {
     title: 'TagInfoButton',
 
-    component: TagInfoButton,
+    component: DataInfoButton,
     argTypes: {}
 } as Meta;
 
-const Template: Story<TagInfoButtonProps> = (args) => <TagInfoButton {...args} />;
+const Template: Story<DataInfoButtonProps> = (args) => <DataInfoButton {...args} />;
 
 export const Default = Template.bind({});
 

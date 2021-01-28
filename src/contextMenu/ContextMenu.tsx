@@ -2,9 +2,9 @@ import React, { CSSProperties } from 'react';
 import { getIcon } from '../helpers/getIcon';
 import TagContextMenu from '../tagContextMenu/TagContextMenu';
 import TagIcon from '../tagIcon/TagIcon';
-import style from './tagContextOverlay.module.css';
+import style from './contextMenu.module.css';
 
-interface TagContextOverlayProps {
+interface ContextMenuProps {
     icon: string;
     legendColor: string;
     expanded: boolean;
@@ -16,7 +16,7 @@ interface TagContextOverlayProps {
     children?: React.ReactNode;
 }
 
-const TagContextOverlay: React.FC<TagContextOverlayProps> = ({
+export const ContextMenu: React.FC<ContextMenuProps> = ({
     icon,
     expanded,
     legendColor,
@@ -26,7 +26,7 @@ const TagContextOverlay: React.FC<TagContextOverlayProps> = ({
     positionStyle,
     openTagInformation,
     children
-}: TagContextOverlayProps) => {
+}: ContextMenuProps) => {
     return (
         <div style={positionStyle} className={style.wrapper}>
             <TagContextMenu
@@ -43,4 +43,4 @@ const TagContextOverlay: React.FC<TagContextOverlayProps> = ({
     );
 };
 
-export default TagContextOverlay;
+export default ContextMenu;

@@ -1,16 +1,16 @@
 import { DotProgress } from '@equinor/eds-core-react';
 import React from 'react';
-import { TagInfoData } from '../types/tagInfoData';
-import TagInfoButton from './TagInfoButton';
-import style from './tagPopover.module.css';
+import { DataInformation } from '../types/dataInformation';
+import DataInfoButton from './DataInfoButton';
+import style from './dataInfoPopover.module.css';
 
-export interface TagPopoverProps {
-    dataToShow: TagInfoData[];
+export interface DataInfoPopoverProps {
+    dataToShow: DataInformation[];
     isLoading: boolean;
 }
 
-export const TagPopover: React.FC<TagPopoverProps> = ({ dataToShow, isLoading }: TagPopoverProps) => {
-    const getDataGroupings = dataToShow.reduce((dictionary: { [itemType: string]: TagInfoData[] }, current) => {
+export const DataInfoPopover: React.FC<DataInfoPopoverProps> = ({ dataToShow, isLoading }: DataInfoPopoverProps) => {
+    const getDataGroupings = dataToShow.reduce((dictionary: { [itemType: string]: DataInformation[] }, current) => {
         if (!dictionary[current.itemType]) {
             dictionary[current.itemType] = [current];
         } else {
@@ -28,7 +28,7 @@ export const TagPopover: React.FC<TagPopoverProps> = ({ dataToShow, isLoading }:
                     return (
                         <div key={key} className={style.groupWrapper}>
                             {getDataGroupings[key].map((data, index) => {
-                                return <TagInfoButton data={data} key={index} />;
+                                return <DataInfoButton data={data} key={index} />;
                             })}
                         </div>
                     );
@@ -38,4 +38,4 @@ export const TagPopover: React.FC<TagPopoverProps> = ({ dataToShow, isLoading }:
     );
 };
 
-export default TagPopover;
+export default DataInfoPopover;

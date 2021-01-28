@@ -1,22 +1,22 @@
 import { themeConst } from '@equinor/echo-framework';
 import { Button, CircularProgress } from '@equinor/eds-core-react';
 import React, { useState } from 'react';
+import DataInfoPopover from '../contextMenuPopover/DataInfoPopover';
 import { Icon } from '../icon/Icon';
-import TagPopover from '../tagPopover/TagPopover';
-import { TagInfoData } from '../types/tagInfoData';
-import style from './tagMoreInfo.module.css';
+import { DataInformation } from '../types/dataInformation';
+import style from './buttonWithPopover.module.css';
 
-export interface TagMoreInfoProps {
+export interface ButtonWithPopoverProps {
     fetchDataToShow: () => void;
-    fetchedData: TagInfoData[];
+    fetchedData: DataInformation[];
     isLoading: boolean;
 }
 
-export const TagMoreInfo: React.FC<TagMoreInfoProps> = ({
+export const ButtonWithPopover: React.FC<ButtonWithPopoverProps> = ({
     fetchDataToShow,
     fetchedData,
     isLoading
-}: TagMoreInfoProps) => {
+}: ButtonWithPopoverProps) => {
     const [expanded, setExpanded] = useState<boolean>(false);
 
     const renderPopoverButton = (): JSX.Element => {
@@ -44,9 +44,9 @@ export const TagMoreInfo: React.FC<TagMoreInfoProps> = ({
                 </Button>
             )}
 
-            {expanded && <TagPopover isLoading={isLoading} dataToShow={fetchedData} />}
+            {expanded && <DataInfoPopover isLoading={isLoading} dataToShow={fetchedData} />}
         </div>
     );
 };
 
-export default TagMoreInfo;
+export default ButtonWithPopover;

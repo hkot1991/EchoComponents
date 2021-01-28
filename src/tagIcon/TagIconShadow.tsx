@@ -5,7 +5,7 @@ interface TagIconShadowWrapperProps {
     children: React.ReactNode;
 }
 
-const TagIconShadowWrapper: React.FC<TagIconShadowWrapperProps> = ({ children }: TagIconShadowWrapperProps) => {
+export const TagIconShadowWrapper: React.FC<TagIconShadowWrapperProps> = ({ children }: TagIconShadowWrapperProps) => {
     return <div className={`${styles.shadow}`}>{children}</div>;
 };
 

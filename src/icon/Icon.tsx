@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { Icon as EdsIcon } from '@equinor/eds-core-react';
-import { info_circle } from '@equinor/eds-icons';
+import * as icons from '@equinor/eds-icons';
 import React from 'react';
 
 export interface IconProps {
@@ -10,9 +9,7 @@ export interface IconProps {
 }
 
 export const Icon: React.FC<IconProps> = ({ name, title, color }: IconProps) => {
-    EdsIcon.add({
-        info_circle
-    });
+    EdsIcon.add(icons);
 
     return <EdsIcon name={name} title={title} color={color} />;
 };

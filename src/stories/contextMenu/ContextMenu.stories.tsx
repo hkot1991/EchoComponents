@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React, { CSSProperties } from 'react';
-import TagContextOverlayWrapper, { TagContextOverlayWrapperProps } from './TagContextOverlayWrapper';
+import ContextMenuWrapper, { ContextMenuWrapperProps } from './ContextMenuWrapper';
 
 export default {
-    title: 'TagContextOverlay',
+    title: 'ContextMenu',
 
-    component: TagContextOverlayWrapper,
+    component: ContextMenuWrapper,
     argTypes: {
         legendColor: { control: 'color' },
         icon: {
@@ -33,7 +33,7 @@ export default {
     }
 } as Meta;
 
-const Template: Story<TagContextOverlayWrapperProps> = (args) => <TagContextOverlayWrapper {...args} />;
+const Template: Story<ContextMenuWrapperProps> = (args) => <ContextMenuWrapper {...args} />;
 
 export const Default = Template.bind({});
 
