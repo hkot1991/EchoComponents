@@ -13,7 +13,6 @@ import pkg from './package.json';
 const extensions = ['.jsx', '.js', '.tsx', '.ts'];
 export default [
     {
-        preserveModules: true,
         input: pkg.source,
         output: {
             file: pkg.main,
