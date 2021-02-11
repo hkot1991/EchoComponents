@@ -33,6 +33,7 @@
     width: 100%;
     height: 46px;
     overflow: hidden;
+    box-sizing: unset;
 }
 
 .tagText {
